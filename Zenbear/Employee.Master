@@ -1,0 +1,98 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Employee.master.vb" Inherits="ZenBear.Employee" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Zenbear Employee Portal</title>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+  
+    <form id="form1" runat="server">
+         <style>
+        .jay tr{
+            border:solid 2px black;
+        }
+        .jay td{
+            background-color:powderblue;
+            text-align:center;
+            color:black;
+            font-size:24px;
+        }
+       
+    </style>
+        <table style="width:100%">
+            <tr><td>Zen Bear Employee/Contractor Portal</td><td style="float:right;">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MyInfoModal">MyInfo</button><br />
+                <asp:Button ID="Button1" runat="server" Text="Admin Area" class="btn btn-primary" OnClick="Button1_Click" />
+                <br />
+                <a href ="logout.aspx">Logout</a></td></tr>
+            <tr><td colspan="2">
+                <table style="width:100%" class="jay">
+                    <tr><td><a href ="landing.aspx">Landing Page</a></td>
+                    <td><a href ="MyReports,aspx">MyReports</a></td>
+                    <td><a href ="Inventory.aspx">Inventory</a></td>
+                    <td><a href ="SalesMgt.aspx">Sales/Coupon Management</a></td>
+                </table>
+                </td></tr>
+            <tr><td colspan="2">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        
+                </td></tr>
+        </table>
+        
+
+      
+
+<!-- Modal -->
+<div class="modal fade" id="MyInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Employee Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <table style="width:100%;" border="1" borderColor="blue">
+           <tr><td style="text-align:right;padding-right:5px;">EmployeeID:</td><td><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">FirstName:</td><td><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">LastName:</td><td><asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">Address:</td><td><asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">City:</td><td><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">State:</td><td><asp:Label ID="Label6" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">Zip:</td><td><asp:Label ID="Label7" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">PhoneNumber:</td><td><asp:Label ID="Label8" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">Email:</td><td><asp:Label ID="Label9" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">UN:</td><td><asp:Label ID="Label10" runat="server" Text="Label"></asp:Label></td></tr>
+           <tr><td style="text-align:right;padding-right:5px;">CurrentJob:</td><td><asp:Label ID="Label11" runat="server" Text="Label"></asp:Label></td></tr>
+     <tr><td colspan="2">*If this is wrong please contact the system admin.</td></tr>
+           </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        
+
+
+
+
+
+
+    </form>
+</body>
+</html>
