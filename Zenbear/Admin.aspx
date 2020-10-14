@@ -17,16 +17,28 @@
                   <tr><td>PhoneNumber</td><td><asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
                   <tr><td>Email</td><td><asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td></tr>
                   <tr><td>UN</td><td><asp:TextBox ID="TextBox10" runat="server"></asp:TextBox></td></tr>
-                  <tr><td>Admin</td><td><asp:CheckBox ID="CheckBox1" runat="server" Visible="false" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" />
-                      <asp:Label ID="ADmstat" runat="server" Text=""></asp:Label>
-
-                                    </td></tr>
+                  <tr><td>Admin</td><td><asp:CheckBox ID="CheckBox1" runat="server" Visible="false" AutoPostBack="true" OnCheckedChanged="CheckBox1_CheckedChanged" /><asp:Label ID="ADmstat" runat="server" Text=""></asp:Label></td></tr>
+                  <tr><td>Require Password Reset</td><td><asp:CheckBox ID="CheckBox2" runat="server" Visible="false" AutoPostBack="true" OnCheckedChanged="CheckBox2_CheckedChanged"/><asp:Label ID="PWResetL" runat="server" Text=""></asp:Label></td></tr>
                   <tr><td colspan="2"><asp:Button ID="Button2" runat="server" Text="Save Changes" OnClick="Button2_Click" /></td></tr>
                 <tr><td colspan="2">
                     <asp:Label ID="stat" runat="server" Text=""></asp:Label></td></tr>
             </table>
-            </td></tr>
+           <br />
+            </td>
+            <td style="vertical-align:top">
+            <table id="pwtb" runat="server" visible="false">
+        <tr><td colspan="2"><center>Change Users Password <br />(will require them to reset their password after first login)</center></td></tr>
+         <tr><td>New Temp Password</td><td><asp:TextBox ID="TextBox11" runat="server" TextMode="Password" ></asp:TextBox></td></tr>
+         <tr><td colspan="2"><center><asp:Button ID="Button3" runat="server" Text="Reset Password" OnClick="Button3_Click"/> 
+             <br />
+             <asp:Label ID="PWStat" runat="server" Text=""></asp:Label></center>
+             </td></tr>
     </table>
 
 
+
+            </td></tr>
+    </table>
+   
+    
 </asp:Content>

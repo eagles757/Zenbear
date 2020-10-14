@@ -36,7 +36,9 @@ un,firstname, lastname
         If DropDownList1.SelectedIndex = 0 Then
             employeetb.Visible = False
             CheckBox1.Visible = False
+            CheckBox2.Visible = False
             ADmstat.Visible = False
+            pwtb.Visible = False
         Else
             Dim aa As New UserClass
             aa.getUser(DropDownList1.SelectedValue)
@@ -57,10 +59,17 @@ un,firstname, lastname
                 CheckBox1.Checked = False
             End If
 
+            If aa.PWReset = "Y" Then
+                CheckBox2.Checked = True
+            Else
+                CheckBox2.Checked = False
+            End If
 
             CheckBox1.Visible = True
+            CheckBox2.Visible = True
             employeetb.Visible = True
             ADmstat.Visible = True
+            pwtb.Visible = True
         End If
 
 
@@ -87,6 +96,7 @@ un,firstname, lastname
         Dim adm = "Y"
         If CheckBox1.Checked = False Then adm = "N"
         aa.Admin = adm
+
 
 
 
@@ -124,6 +134,7 @@ un,firstname, lastname
         employeetb.Visible = True
         TextBox1.Enabled = False
         CheckBox1.Visible = False
+        CheckBox2.Visible = False
         ADmstat.Visible = False
     End Sub
 
@@ -142,6 +153,41 @@ un,firstname, lastname
         End If
 
 
+
+    End Sub
+
+    Protected Sub Button3_Click(sender As Object, e As EventArgs)
+        If TextBox11.Text <> "" Then
+            Dim pw = TextBox11.Text
+            pw = gl.GetHash(pw)
+
+            ' now save the new hash to the AA Table
+
+            Dim qry = "update zenbear_Biz.AA set  AA_3='" & pw & "',reset='Y' where aaID='" & TextBox1.Text & "'"
+
+            Dim dd As String = gl.mysql_update(qry, "connstr")
+
+            If dd.IndexOf("ERROR") > -1 Then
+                PWStat.Text = "Error: " & dd
+            Else
+                PWStat.Text = "Password updated!"
+            End If
+
+        End If
+
+
+    End Sub
+
+    Protected Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs)
+        Dim qry = "update zenbear_Biz.AA set reset='Y' where AAID='" & TextBox1.Text & "'"
+
+        Dim dd As String = gl.mysql_update(qry, "connstr")
+
+        If dd.IndexOf("ERROR") > -1 Then
+            PWResetL.Text = "Error: " & dd
+        Else
+            PWResetL.Text = "Required updated!"
+        End If
 
     End Sub
 End Class

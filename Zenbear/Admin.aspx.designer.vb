@@ -149,6 +149,24 @@ Partial Public Class Admin
     Protected WithEvents ADmstat As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''CheckBox2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBox2 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''PWResetL control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PWResetL As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Button2 control.
     '''</summary>
     '''<remarks>
@@ -165,4 +183,40 @@ Partial Public Class Admin
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents stat As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''pwtb control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pwtb As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''TextBox11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TextBox11 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Button3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''PWStat control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents PWStat As Global.System.Web.UI.WebControls.Label
 End Class
